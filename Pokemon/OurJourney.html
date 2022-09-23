@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+
+<!-- 
+Pokemon: Our Journey (我們的冒險旅程)
+
+@author iceaquasoul
+@date March 2015
+
+License: GNU GPL v3
+
+I spent a lot of time and put in a ton of effort into this so please:
+    - Do not remove/edit the credit for the original author.
+    - Do not distribute this without giving credit to the original author.
+    - Do not use this for commercial reasons.
+
+Keeping in mind the above, please feel free to:
+    - Edit this however you like
+    - Use this as reference for educational purposes.
+
+Github:
+    Main: https://github.com/iceaquasoul/
+    Repository for Tumblr Themes: https://github.com/iceaquasoul/TumblrThemes/
+
+Source Code:
+    https://raw.githubusercontent.com/iceaquasoul/TumblrThemes/master/OurJourney.html
+
+Defaut Images Credit
+    Poké Ball: http://bulbapedia.bulbagarden.net/wiki/Poké_Ball
+-->
+
+<html>
+    
+    <head>
+        <meta  charset = "utf-8" />
+        
+        <!-- general options -->
+        <meta  name = "color:Title"  content = "#8416a5" />
+        <meta  name = "color:Link"  content = "#6ca516" />
+        <meta  name = "color:Link Hover"  content = "#a52216" />
+
+        <meta  name = "color:Background Body"  content = "{BackgroundColor}" />
+        <meta  name = "color:Background Content"  content = "{BackgroundColor}" />
+
+        <!-- sidebar options -->
+        <meta  name = "image:Sidebar"  content = "" />
+
+        <!-- title -->
+        <meta  name = "color:Background Title"  content = "#d7ac2b" />
+        <meta  name = "text:Title Font Size"  content = "20px" />
+
+        <!-- navigation list -->
+        <meta  name = "select:Navigation List Columns"  content = "1" />
+        <meta  name = "select:Navigation List Columns"  content = "2" />
+        <meta  name = "select:Navigation List Columns"  content = "3" />
+
+        <!-- metadata bar options -->
+        <meta  name = "if:Show Tags"  content = "1" />
+
+        <!-- companion bar options -->
+        <meta  name = "image:Companion Bar Top"  content = "" />
+        
+        <meta  name = "image:Companion 1 Large"  content = "" />
+        <meta  name = "image:Companion 2 Large"  content = "" />
+        <meta  name = "image:Companion 1 Small"  content = "" />
+        <meta  name = "image:Companion 2 Small"  content = "" />
+        <meta  name = "image:Companion 3"  content = "" />
+        <meta  name = "image:Companion 4"  content = "" />
+        <meta  name = "image:Companion 5"  content = "" />
+        <meta  name = "image:Companion 6"  content = "" />
+
+        <meta  name = "if:Use Avatar"  content = "1" />
+        <meta  name = "if:Use Tag Specific Design"  content = "1" />
+
+        <meta  name = "if:Companion Icon Size Large"  content = "0" />
+
+        <!-- stylesheet -->
+        <style  type = "text/css" >
+            
+            body
+            {
+                font-family: calibri ;
+                font-size: 12px ;
+                color: #000000 ;
+
+                background-color: {color:Background Body} ;
+            }
+                        
+            a
+            {
+                text-decoration: none ;
+                color: {color:Link} ;
+            }
+
+            a:hover
+            {
+                -webkit-transition: 0.3s ease;
+                -moz-transition: 0.3s ease;
+                -ms-transition: 0.3s ease;
+                -o-transition: 0.3s ease;
+                transition: 0.3s ease;
+
+                color: {color:Link Hover} ;
+            }
+
+            blockquote
+            {
+                margin-left: 25px ;
+                margin-right: 0px ;
+                padding: 0px 15px ;
+                border-left: 3px solid rgba(0,0,0,0.1) ;
+            }
+            
+            /* -- for centering -- */
+            #wrap
+            {
+                position: fixed ;
+                width: 1190px  ;
+
+                top: 0px ;
+                bottom: 0px ;
+                left: 50% ;
+                margin-left: -595px ;
+
+                background-color: {color:Background Content} ;
+            }
+
+            /* -- sidebar -- */
+            #sidebar_wrapper
+            {
+                position: absolute ;
+                top: 0px ;
+                bottom: 0px ;
+                left: 0px ;
+                width: 200px ;
+                
+                padding: 20px ;
+                
+                text-align: center ;
+                overflow: hidden ;
+            }
+
+            /* -- trainer card -- */
+            #sidebar_titleDesc
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                height: 130px ;
+                margin-top: 20px ;
+                
+                background: {color:Background Title} ;
+            }
+            
+            #sidebar_title
+            {
+                position: absolute ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                height: 100% ;
+                
+                background-image: url("https://40.media.tumblr.com/f5414cd8ecdd45e0b567f925c815e6d2/tumblr_ni8vs76CqC1tfn7xfo2_250.png") ;
+                opacity: 1 ;
+            }
+            
+            #sidebar_title_txt
+            {
+                position: relative ;
+                top: 30px ;
+                left: 0px ;
+                
+                width: 190px ;
+                height: 90px ;
+                padding: 5px ;
+                
+                display: table-cell ;
+                vertical-align: middle ;
+
+                font-size: {text:Title Font Size} ;
+                font-weight: bold ;
+                color: {color:Title} ;
+            }
+            
+            #sidebar_titleDesc:hover #sidebar_title
+            {
+                opacity: 0 ;
+                
+                -webkit-transition: 0.5s ease;
+                -moz-transition: 0.5s ease;
+                -ms-transition: 0.5s ease;
+                -o-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+            
+            #sidebar_description
+            {
+                position: absolute ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                height: 100% ;
+                
+                background-image: url("https://41.media.tumblr.com/fa025dc6fd3b45eb646de55d1831a43c/tumblr_ni8vs76CqC1tfn7xfo1_250.png") ;
+                opacity: 0 ;
+            }
+            
+            #sidebar_description_txt
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 190px ;
+                height: 120px ; 
+                padding: 5px 10px ;
+                
+                display: table-cell ;
+                text-align: left ;
+                vertical-align: middle ;
+            }
+            
+            #sidebar_titleDesc:hover #sidebar_description
+            {
+                opacity: 1 ;
+                
+                -webkit-transition: 0.5s ease;
+                -moz-transition: 0.5s ease;
+                -ms-transition: 0.5s ease;
+                -o-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+            
+            /* -- navigation icons -- */
+            #sidebar_nav_iconSet
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                height: 30px ;
+                margin-top: 0px ;
+                padding: 0px ;
+                
+                overflow: hidden ;
+
+                background: rgba(0,0,0,0.1) ;
+            }
+            
+            .sidebar_nav_icon
+            {
+                display: inline-block ;
+                padding: 5px ;
+
+                -webkit-transition: all 0.5s ease ;
+                -moz-transition: all 0.5s ease ;
+                -ms-transition: all 0.5s ease ;
+                -o-transition: all 0.5s ease ;
+                transition: all 0.5s ease ;
+            }
+
+            .sidebar_nav_icon:hover
+            {
+                background: rgba(255,255,255,0.3) ;
+            }
+            
+            /* -- navigation list -- */
+            #sidebar_nav_list
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+
+                margin-top: 20px ;
+                text-align: left ;
+
+                font-weight: bold ;
+            }
+            
+            .sidebar_nav_list_column1 a
+            {
+                display: block ;
+                
+                padding: 5px 5px 5px 10px ;
+                margin-bottom: 5px ;
+                
+                border-left: 15px solid rgba(0,0,0,0.5) ;
+                background: rgba(0,0,0,0.15) ;
+
+                color: #000000 ;
+                
+                -webkit-transition: all 0.3s linear ;
+                -moz-transition: all 0.3s linear ;
+                -ms-transition: all 0.3s linear ;
+                -o-transition: all 0.3s linear ;
+                transition: all 0.3s linear ;
+            }
+            
+            .sidebar_nav_list_column1 a:hover
+            {
+                color: #000000 ;
+                border-left: 30px solid rgba(0,0,0,0.5) ;
+            }
+
+            .sidebar_nav_list_column2 a
+            {   
+                display: inline-block ;
+                float: left ;
+                width: 64px ;
+
+                padding: 5px ;
+                margin: 0px 3px 5px ;
+
+                background: rgba(0,0,0,0.15) ;
+                color: #000000 ;
+
+                border-left: 10px solid rgba(0,0,0,0.4) ;
+                border-right: 10px solid rgba(0,0,0,0.4) ;
+
+                -webkit-transition: all 0.5s ease ;
+                -moz-transition: all 0.5s ease ;
+                -ms-transition: all 0.5s ease ;
+                -o-transition: all 0.5s ease ;
+                transition: all 0.5s ease ;
+            }
+
+            .sidebar_nav_list_column2 a:hover
+            {
+                background: rgba(255,255,255,0.3) ;
+            }
+
+            .sidebar_nav_list_column3 a
+            {   
+                display: inline-block ;
+                float: left ;
+                width: 42px ;
+
+                padding: 5px ;
+                margin: 0px 2px 5px ;
+
+                background: rgba(0,0,0,0.15) ;
+                color: #000000 ;
+
+                border-left: 5px solid rgba(0,0,0,0.4) ;
+                border-right: 5px solid rgba(0,0,0,0.4) ;
+
+                -webkit-transition: all 0.5s ease ;
+                -moz-transition: all 0.5s ease ;
+                -ms-transition: all 0.5s ease ;
+                -o-transition: all 0.5s ease ;
+                transition: all 0.5s ease ;
+            }
+
+            .sidebar_nav_list_column3 a:hover
+            {
+                background: rgba(255,255,255,0.3) ;
+            }
+
+            /* -- Pagination -- */
+            #sidebar_pagination
+            {
+                margin-top: 20px ;
+
+                font-family: calibri ;
+                font-size: 10.5px ;
+            }
+
+            .sidebar_pageNav
+            {
+                display: inline-block ;
+            }
+
+            .sidebar_pageNav a
+            {
+                padding: 5px ;
+                color: #000000 ;
+                background: rgba(0,0,0,0.1) ;
+
+                -webkit-transition: all 0.5s ease ;
+                -moz-transition: all 0.5s ease ;
+                -ms-transition: all 0.5s ease ;
+                -o-transition: all 0.5s ease ;
+                transition: all 0.5s ease ;
+            }
+
+            .sidebar_pageNav a:hover
+            {
+                background: rgba(255,255,255,0.3) ;
+            }
+
+            /* -- Posts -- */
+            #posts_wrapper
+            {
+                position: absolute ;
+                top: 0px ;
+                bottom: 0px ;
+                left: 0px ;
+                width: 740px ;
+                
+                padding: 20px 20px 0px 20px ;
+                margin-left: 220px ;
+                
+                text-align: center ;
+                overflow: auto ;
+            }
+            
+            .post
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                vertical-align: top ;
+                text-align: left ;
+            }
+            
+            .post_spacer
+            {
+                position: relative ;
+                width: 100% ;
+                height: 20px ;
+            }
+            
+            /* -- post content -- */
+            .post_content
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 500px ;
+                max-width: 500px ;
+                padding: 15px ;
+                
+                font-size: 15px ;
+                background: rgba(255,255,255,0.2) ;
+            }
+            
+            .post_title
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 385px ;
+                margin-top: 15px ;
+            }
+            
+            .post_title a
+            {
+                color: #0000ff ;
+            }
+            
+            .post_separator
+            {
+                position: relative ;
+                top: 0px ;
+
+                width: 100% ;
+                height: 22px ;
+                margin-top: 5px ;
+                
+                opacity: 0.15 ;
+                background-image: url("http://static.tumblr.com/ibafx9g/BlEnktpts/pokeballcontentseparatorright.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+            
+            .post_contentTxt
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                width: 100% ;
+                
+                padding: 0px ;
+            }
+            
+            .post_QA
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                margin-top: 5px ;
+                padding: 10px ;
+                background: rgba(255,255,255,0.3) ;
+                
+                border-top-left-radius: 15px ;
+                border-top-right-radius: 15px ;
+                border-bottom-left-radius: 15px ;
+                border-bottom-right-radius: 15px ;
+            }
+            
+            .post_contentSrc
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                width: 325px ;
+                padding: 10px 30px ;
+            }
+            
+            .post_link
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                margin: 15px ;
+                padding: 10px 20px ;
+                background: rgba(255,255,255,0.2) ;
+                
+                text-align: center ;
+                color: rgba(0,0,0,0.6) ;
+                
+                border-top-left-radius: 15px ;
+                border-top-right-radius: 15px ;
+                border-bottom-left-radius: 15px ;
+                border-bottom-right-radius: 15px ;
+            }
+
+            .post_quote
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                padding: 10px 30px ;
+
+                font-size: 20px ;
+
+                background: rgba(255,255,255,0.2) ;
+
+                border-top-left-radius: 15px ;
+                border-top-right-radius: 15px ;
+                border-bottom-left-radius: 15px ;
+                border-bottom-right-radius: 15px ;
+            }
+
+            .post_audio
+            {
+                position: relative ;
+                height: 177px ;
+            }
+
+            .post_audioAlbum
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                width: 150px ;
+                height: 177px ;
+
+                margin-bottom: 5px ;
+
+                float: left ;
+                overflow: hidden ;
+                display: block ;
+            }
+
+            .post_audioAlbum img
+            {
+                position: absolute ;
+                top: 0px ;
+                left: 0px ;
+
+                width: 150px ;
+                height: 150px ;
+                max-width: 150px ;
+            }
+
+            .post_audioPlayer
+            {
+                position: relative ;
+                top: 150px ;
+                width: 100% ;
+
+                z-index: 50 ;
+            }
+
+            .post_audioData
+            {
+                position: relative ;
+                margin-left: 165px ;
+            }
+
+            .post_audioData_label
+            {
+                position: relative ;
+                width: 55px ;
+
+                padding: 0px 0px 10px ;
+
+                vertical-align: top ;
+                font-weight: bold ;
+            }
+
+            .post_audioData_entry
+            {
+                position: relative ;
+                padding: 0px 0px 10px ;
+            }
+            
+            /* -- post metadata : backgrounds -- */
+            .post_metadata
+            {
+                width: 170px ;
+                max-width: 170px ;
+                padding: 10px ;
+
+                font-style: bold ;
+            }
+
+            .post_metadata_text
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/lFBnktt22/iceaquasoulposttextcalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_photo   /* also the post type for photoset and panorama posts */
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/4i6nktt0s/iceaquasoulpostphotocalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+                        
+            .post_metadata_quote
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/Qncnktt1f/iceaquasoulpostquotecalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_link
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/EBOnktt07/iceaquasoulpostlinkcalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_chat
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/Q5Snktszf/iceaquasoulpostchatcalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_audio
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/5lSnktsyq/iceaquasoulpostaudiocalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_video
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/Tbhnktt2m/iceaquasoulpostvideocalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            .post_metadata_answer
+            {
+                background-image: url("http://static.tumblr.com/ibafx9g/sbsnktsxd/iceaquasoulpostanswercalisto10.png") ;
+                background-position: right bottom ;
+                background-repeat: no-repeat ;
+                background-color: rgba(255,255,255,0.1) ;
+            }
+            
+            /* -- post metadata : content -- */
+            .post_buttonSet
+            {
+                position: relative ;
+                top: 0px ;
+                right: 0px ;
+                
+                height: 27px ;
+                margin-bottom: 10px ;
+            }
+            
+            .post_button
+            {
+                position: relative ;
+                top: 0px ;
+                right: 0px ;
+                
+                padding: 5px ;
+                
+                float: right ;
+                
+                background: rgba(255,255,255,0.4) ;
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .post_permalink a
+            {
+                color: rgba(0,0,0,0.3) ;
+            }
+            
+            .post_parent
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                margin-bottom: 10px ;
+            }
+            
+            .post_date
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                margin-bottom: 10px ;
+                
+                display: block ;
+                text-align: center ;
+                background: rgba(255,255,255,0.4);
+            }
+            
+            .post_tags
+            {
+                position: relative ;
+                top: 0px ;
+                left: 0px ;
+                
+                width: 100% ;
+                margin-bottom: 10px ;
+            }
+            
+            .post_tags a
+            {
+                color: #000000 ;
+            }
+
+            .post_tags a:hover
+            {
+                color: {color:Link Hover} ;
+            }
+
+            /* -- post notes (permalink pages) -- */
+            .post_notes
+            {
+                position: relative ;
+                margin-left: -40px ;
+
+                font-size: 10.5px ;
+                text-align: left ;
+            }
+
+            .post_notes img
+            {
+                margin-right: 10px ;
+            }
+
+            .post_notes li
+            {
+                padding: 5px 10px ;
+                margin-bottom: 5px ;
+
+                list-style-type: none ;
+
+                background: rgba(255,255,255,0.3) ;
+            }
+
+            /* -- decor: right sidebar -- */
+            #companion_wrapper
+            {
+                position: absolute ;
+                top: 0px ;
+                bottom: 0px ;
+
+                width: 150px ;
+                max-width: 150px ;
+
+                padding: 20px ;
+                margin-left: 1000px ;
+            }
+
+            #companion_top
+            {
+                position: absolute ;
+                top: 20px ;
+
+                width: 100% ;
+                max-width: 150px ;
+                height: 150px ;
+            }
+
+            #companion_avatar
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({PortraitURL-128}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_topPic
+            {
+                width: 100% ;
+                height: 100% ;
+                
+                background-image: url({image:Companion Bar Top}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_tag
+            {
+                position: absolute ;
+                top: 0px ;
+                width: 100% ;
+                height: 100% ;
+            }
+
+            #companion_1Back_small
+            {
+                position: absolute ;
+                bottom: 174px ;
+                left: 20px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_2Back_small
+            {
+                position: absolute ;
+                bottom: 174px ;
+                left: 97px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_3Back
+            {
+                position: absolute ;
+                bottom: 97px ;
+                left: 20px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_4Back
+            {
+                position: absolute ;
+                bottom: 97px ;
+                left: 97px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_5Back
+            {
+                position: absolute ;
+                bottom: 20px ;
+                left: 20px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_6Back
+            {
+                position: absolute ;
+                bottom: 20px ;
+                left: 97px ;
+                width: 73px ;
+                height: 73px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/6Gynla34n/iceaquasoul_pokeball_size55_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_1Back_large
+            {
+                position: absolute ;
+                bottom: 175px ;
+                width: 150px ;
+                height: 150px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/P2Snla2t8/iceaquasoul_pokeball_size100_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_2Back_large
+            {
+                position: absolute ;
+                bottom: 20px ;
+                width: 150px ;
+                height: 150px ;
+
+                background-image: url("http://static.tumblr.com/ibafx9g/P2Snla2t8/iceaquasoul_pokeball_size100_transparency50.png") ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_1_small
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 1 Small}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_2_small
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 2 Small}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_3
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 3}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_4
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 4}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_5
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 5}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_6
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 6}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_1_large
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 1 Large}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            #companion_2_large
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Companion 2 Large}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+
+            /* -- scrollbar -- */
+            ::-webkit-scrollbar 
+            {
+                height: 10px ;
+                width: 10px ;
+                background-color: rgba(255,255,255,0.3) ;
+            }
+
+            ::-webkit-scrollbar-thumb:vertical 
+            {
+                background: #000000 ;
+                border: 2px solid rgba(255,255,255,0.5) ;
+            }
+
+            ::-webkit-scrollbar-thumb:horizontal
+            {
+                background: #000000 ;
+                border: 2px solid rgba(255,255,255,0.5) ;
+            }
+             
+            ::-webkit-scrollbar-button:vertical 
+            {
+                height: 10px ;
+                width: 10px ;
+                background: rgba(255,255,255,0.2) ;
+            }
+             
+            ::-webkit-scrollbar-button:horizontal 
+            {
+                width: 10px ;
+                height: 10px ;
+                background: rgba(255,255,255,0.2) ;
+            }
+            
+            /* -- enable user-defined css stylesheet -- */
+            {CustomCSS}
+
+            /* -- 
+            when using tag-specific design in "decor" area:
+            - classes
+            - tags are case-sensitive
+            - different languages can be used
+            - BUT there MUST be NO SPACES in the tags
+            - max size: 150px by 150px
+
+            example:
+
+            .ふりそで
+            {
+                width: 100% ;
+                height: 100% ;
+
+                background-image: url({image:Test}) ;
+                background-position: center center ;
+                background-repeat: no-repeat ;
+            }
+            -- */
+        </style>
+
+    </head>
+    
+    <body><div  id = "wrap">
+
+        <!-- Sidebar -->
+        <div  id = "sidebar_wrapper" >
+            
+            <!-- image -->
+            <a  id = "image_sidebar"  href = "/"  title = "" >
+                <image  alt = "{Title}"  src = "{image:Sidebar}" />
+            </a>
+            
+            <!-- navigation icons -->
+            <div  id = "sidebar_nav_iconSet" >
+                <div  class = "sidebar_nav_icon" >
+                    <a  id = "image_homeIcon"  href = "/"  title = "Home" >
+                        <image  alt = "Home"  src = "http://static.tumblr.com/ibafx9g/d0Dnktpm3/cianwoodhouseicon.png" />
+                    </a>
+                </div>
+                
+                <div  class = "sidebar_nav_icon" >
+                    <a  id = "image_archiveIcon"  href = "/archive"  title = "Archive" >
+                        <image  alt = "Archive"  src = "http://static.tumblr.com/ibafx9g/B6ynktpqf/timegear19x20.png" />
+                    </a>
+                </div>
+                
+                <div  class = "sidebar_nav_icon" >
+                    <a  id = "image_askIcon"  href = "/ask"  title = "Mail" >
+                        <image  alt = "Mail"  src = "http://static.tumblr.com/ibafx9g/iCwnktpha/pelippermail.png" />
+                    </a>
+                </div>
+                
+                <div  class = "sidebar_nav_icon" >
+                    <a  id = "image_aboutIcon"  href = "/about"  title = "Trainer Profile" >
+                        <image  alt = "About"  src = "http://static.tumblr.com/ibafx9g/Chmnktpry/trainercardiconkyrie.png" />
+                    </a>
+                </div>
+                
+                <div  class = "sidebar_nav_icon" >
+                    <a  id = "image_creditsIcon"  href = "http://iceaquasoulthemes.tumblr.com/"  title = "Developer" >
+                        <image  alt = "Credits"  src = "http://static.tumblr.com/ibafx9g/BF0nktpoi/gracidea20x20.png" />
+                    </a>
+                </div>
+            </div>
+            
+            <!-- trainer card: title, description -->
+            <div  id = "sidebar_titleDesc" >
+                <div  id = "sidebar_title" >
+                    <div  id = "sidebar_title_txt" >
+                        {Title}
+                    </div>
+                </div>
+                
+                <div  id = "sidebar_description" >
+                    <div  id = "sidebar_description_txt" >
+                        {Description}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- pagination -->
+            {block:Pagination}
+            <div  id = "sidebar_pagination">
+                {block:PreviousPage}
+                <div  class = "sidebar_pageNav">
+                    <a  href = "{PreviousPage}">←　Previous</a>
+                </div>
+                {/block:PreviousPage}
+
+                <div  class = "sidebar_pageNav">
+                    <a  href = "#top">{CurrentPage} of {TotalPages}</a>
+                </div>
+                
+                {block:NextPage}
+                <div  class = "sidebar_pageNav">
+                    <a  href = "{NextPage}">Next　→</a>
+                </div>
+                {/block:NextPage}
+            </div>
+            {/block:Pagination}
+
+            <!-- permalink navigation -->
+            {block:PermalinkPagination}
+            <div  id = "sidebar_pagination">
+                {block:PreviousPost}
+                <div  class = "sidebar_pageNav">
+                    <a  href = "{PreviousPost}">←　Previous</a>
+                </div>
+                {/block:PreviousPost}
+
+                {block:NextPost}
+                <div  class = "sidebar_pageNav">
+                    <a  href = "{NextPost}">Next　→</a>
+                </div>
+                {/block:NextPost}
+            </div>
+            {/block:PermalinkPagination}
+
+            <!-- navigation list -->
+            {block:HasPages}
+            <div  id = "sidebar_nav_list" >
+                {block:Pages}
+                <div  class = "sidebar_nav_list_column{select:Navigation List Columns}"><a  href="{URL}">{Label}</a></div>
+                {/block:Pages}
+            </div>
+            {/block:HasPages}
+
+        </div>
+        
+        <!-- Posts -->
+        <div  id = "posts_wrapper" ><table>
+            
+            {block:Posts}     
+            <tr  class = "post">
+
+                <td  class = "post_content">
+                
+                    <!-- text posts: this includes custom page content! -->
+                    {block:Text}
+                        <!-- title -->
+                        {block:Title}
+                        <div  class = "post_title">
+                            <a  href = "{Permalink}">{Title}</a>
+                        </div>
+                        
+                        <!-- border -->
+                        <div  class = "post_separator" ></div>
+                        {/block:Title}
+
+                        <!-- content -->
+                        <div  class = "post_contentTxt">
+                            {Body}
+                        </div>
+                    {/block:Text}
+                    
+                    <!-- photo -->
+                    {block:Photo}
+                        <!-- the photo -->
+                        <a  href = "{PhotoURL-HighRes}"  target = "{Target}">
+                            {LinkOpenTag}<img  src = "{PhotoURL-500}">{LinkCloseTag}
+                        </a>
+
+                        <!-- caption, if any -->
+                        {block:Caption}
+                        <div  class = "post_separator"></div>
+
+                        <div  class = "post_contentTxt">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+                    {/block:Photo}
+                    
+                    <!-- panorama: has the post type of "photo" -->
+                    {block:Panorama}
+                        <!-- panorama -->
+                        <a  href = "{PhotoURL-Panorama}"  target = "{Target}">
+                            <img  src = "{PhotoURL-500}">
+                        </a>
+
+                        <!-- caption, if any -->
+                        {block:Caption}
+                        <div  class = "post_separator"></div>
+
+                        <div  class = "post_contentTxt">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+                    {/block:Panorama}
+                    
+                    <!-- photoset: also has the post type of "photo" -->
+                    {block:Photoset}
+                        <!-- photoset -->
+                        {Photoset-500}
+
+                        <!-- caption, if any -->
+                        {block:Caption}
+                        <div  class = "post_separator" >
+                            <!---->
+                        </div>
+
+                        <div  class = "post_contentTxt">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+                    {/block:Photoset}
+                    
+                    <!-- quote -->
+                    {block:Quote}
+                       <!-- the quote -->
+                        <!--<div  class = "post_quote">"{Quote}"</div>-->
+                        <div  class = "post_quote">{Quote}</div>
+                        
+                        <!-- the source, if any -->
+                        {block:Source}
+                        <!--<div  class = "post_contentSrc">-　{Source}</div>-->
+                        <div  class = "post_contentSrc">{Source}</div>
+                        {/block:Source}
+                    {/block:Quote}
+                    
+                    <!-- link -->
+                    {block:Link}
+                        <!-- the link -->
+                        <div  class = "post_link">
+                            <a  href = "{URL}"  target = "{Target}">{Name}</a><br />
+                            {Host}
+                        </div>
+                        
+                        <!-- description, if any -->
+                        {block:Description}
+                        <div  class = "post_contentTxt">
+                            {Description}
+                        </div>
+                        {/block:Description}
+                    {/block:Link}
+                    
+                    <!-- chat -->
+                    {block:Chat}
+                       <!-- title -->
+                        {block:Title}
+                        <div  class = "post_title">
+                            <a  href = "{Permalink}">{Title}</a>
+                        </div>
+                        
+                        <!-- border -->
+                        <div  class = "post_separator" >
+                            
+                        </div>
+                        {/block:Title}
+
+                        <!-- content -->
+                        <div class = "post_contentTxt">
+                            {block:Lines}
+                            <p>
+                                {block:Label}<b>{Label} </b>{/block:Label}{Line}
+                            </p>
+                            {/block:Lines}
+                        </div>
+                    {/block:Chat}
+                    
+                    <!-- audio -->
+                    {block:Audio}
+                        <div  class = "post_audio">
+                            <!-- audio artwork -->
+                            <div  class = "post_audioAlbum">
+                                <image  alt = "Default Art"  src = "http://static.tumblr.com/mtdphun/mrbmtls9g/albumart_gray.jpg">
+                                {block:AlbumArt}
+                                <image  alt = "{Album}"  src = "{AlbumArtURL}">
+                                {/block:AlbumArt}
+                                                        
+                                <div  class = "post_audioPlayer">
+                                    {AudioPlayer}
+                                </div>
+                            </div>
+
+                            <!-- audio metadata -->
+                            <table  class = "post_audioData">
+                                {block:TrackName}
+                                <tr>
+                                    <td  class = "post_audioData_label">Name:</td>
+                                    <td  class = "post_audioData_entry">{TrackName}</td>
+                                </tr>
+                                {/block:TrackName}
+
+                                {block:Artist}
+                                <tr>
+                                    <td  class = "post_audioData_label">Artist:</td>
+                                    <td  class = "post_audioData_entry">{Artist}</td>
+                                </tr>
+                                {/block:Artist}
+
+                                {block:Album}
+                                <tr>
+                                    <td  class = "post_audioData_label">Album:</td>
+                                    <td  class = "post_audioData_entry">{Album}</td>
+                                </tr>
+                                {/block:Album}
+                            </table>
+                        </div>
+
+                        <!-- caption, if any -->
+                        {block:Caption}
+                        <div  class = "post_separator"></div>
+
+                        <div  class = "post_contentTxt">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+                    {/block:Audio}
+                    
+                    <!-- video -->
+                    {block:Video}
+                        <!-- the video -->
+                        {Video-500}
+
+                        <!-- the caption, if any -->
+                        {block:Caption}
+                        <div  class = "post_separator"></div>
+                        
+                        <div  class = "post_contentTxt">
+                            {Caption}
+                        </div>
+                        {/block:Caption}
+                    {/block:Video}
+                    
+                    <!-- answer -->
+                    {block:Answer}
+                        <!-- the question -->
+                        <div  class = "post_QA">{Question}</div>
+                        <div  class = "post_contentSrc">-　{Asker}</div>
+                        
+                        <!-- border -->
+                        <div  class = "post_separator"></div>
+                        
+                        <!-- the answer -->
+                        <div  class = "post_QA">{Answer}</div>
+                    {/block:Answer}
+                    
+
+                    <!-- notes for permalink pages -->
+                    {block:PermalinkPage}
+                        {block:PostNotes}
+                        <div  class = "post_separator"></div>
+
+                        <div  class = "post_notes">
+                            {PostNotes}
+                        </div>
+                        {/block:PostNotes}
+                    {/block:PermalinkPage}
+
+                </td>
+
+
+                <!-- METADATA -->
+                <td  class = "post_metadata_{PostType}"><div  class = "post_metadata">
+                    {block:Date}
+
+                        <!-- like/reblog buttons -->
+                        <div  class = "post_buttonSet">
+                            <div  class = "post_button">
+                                {ReblogButton size="17"}
+                            </div>
+                            
+                            <div  class = "post_button">
+                                {LikeButton size="14"}
+                            </div>
+                            
+                            <!-- permalink -->
+                            <div  class = "post_permalink">
+                                <a  href = "{Permalink}">permalink</a>
+                            </div>
+                        </div>
+                        
+                        <!-- post origin (reblogs) -->
+                        {block:RebloggedFrom}
+                        <div  class = "post_parent">
+                            <p>origin: <a  href = "{ReblogRootURL}">{ReblogRootName}</a><br />
+                            via: <a  href = "{ReblogParentURL}">{ReblogParentName}</a></p>
+                        </div>
+                        {/block:RebloggedFrom}
+                        
+                        <!-- post date -->
+                        <div  class = "post_date">
+                            {DayOfMonth} {Month} {Year} | {24Hour}:{Minutes}
+                        </div>
+                        
+                        <!-- list of tags -->
+                        {block:IfShowTags}{block:HasTags}
+                        <div  class = "post_tags">
+                            <p>{block:Tags}
+                                # <a  href = "{TagURL}">{Tag}</a><br />
+                            {/block:Tags}</p>
+                        </div>
+                        {/block:HasTags}{/block:IfShowTags}
+
+                    {/block:Date}
+                </div></td>
+
+            </tr>
+
+            <tr  class = "post_spacer" ></tr>
+            {/block:Posts}
+            
+        </table></div>
+
+        <!-- right sidebar: companions -->
+        <div  id = "companion_wrapper">
+            
+            <!-- top: avatar/picture, tag-specific design -->
+            <div  id = "companion_top">
+                {block:IfUseAvatar}<div  id = "companion_avatar"></div>{/block:IfUseAvatar}
+                {block:IfNotUseAvatar}<div  id = "companion_topPic"></div>{/block:IfNotUseAvatar}
+
+                {block:IfUseTagSpecificDesign}
+                    {block:TagPage}
+                    <div  id = "companion_tag">
+                        <div  class = "{Tag}"></div>   <!-- tags are case-sensitive. works for different languages, BUT only for tags with no spaces -->
+                    </div>
+                    {/block:TagPage}
+                {/block:IfUseTagSpecificDesign}
+            </div>
+            
+            <!-- bottom: pictures -->
+            {block:IfCompanionIconSizeLarge}
+                {block:IfCompanion1LargeImage}<div  id = "companion_1Back_large"><div  id = "companion_1_large"></div></div>{/block:IfCompanion1LargeImage}
+                {block:IfCompanion2LargeImage}<div  id = "companion_2Back_large"><div  id = "companion_2_large"></div></div>{/block:IfCompanion2LargeImage}
+            {/block:IfCompanionIconSizeLarge}
+
+            {block:IfNotCompanionIconSizeLarge}
+                {block:IfCompanion1SmallImage}<div  id = "companion_1Back_small"><div  id = "companion_1_small"></div></div>{/block:IfCompanion1SmallImage}
+                {block:IfCompanion2SmallImage}<div  id = "companion_2Back_small"><div  id = "companion_2_small"></div></div>{/block:IfCompanion2SmallImage}
+                {block:IfCompanion3Image}<div  id = "companion_3Back"><div  id = "companion_3"></div></div>{/block:IfCompanion3Image}
+                {block:IfCompanion4Image}<div  id = "companion_4Back"><div  id = "companion_4"></div></div>{/block:IfCompanion4Image}
+                {block:IfCompanion5Image}<div  id = "companion_5Back"><div  id = "companion_5"></div></div>{/block:IfCompanion5Image}
+                {block:IfCompanion6Image}<div  id = "companion_6Back"><div  id = "companion_6"></div></div>{/block:IfCompanion6Image}
+            {/block:IfNotCompanionIconSizeLarge}
+
+        </div>
+
+    </div></body>
+
+</html>
