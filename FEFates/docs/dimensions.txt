@@ -1,0 +1,59 @@
+Default Sizes and Dimensions
+
+@version March 2017
+
+==================================================
+
+Fonts:
+------
+Size: 13pt
+
+English: 
+	Cambria, calibri
+Chinese: 
+	Windows: KaiTi 楷体
+	Mac OS: Kaiti 华文楷体
+Japanese: 
+	MS Mincho　ＭＳ明朝
+Default: 
+	serif
+
+
+Dimensions:
+-----------
+Overall:
+	Width: 900px
+	// Padding (top, right, bottom, left): 50px 40px 50px 50px
+	Scroll Bar (right): width 10px
+
+Sidebar:
+	Width: 200px
+	// Margin (top, right, bottom, left): 50px 0px 50px 50px
+	top: 50px ; bottom: 50px ; left: 50px
+
+Posts:
+	Overall width: 600px
+
+Einherjar (width x height):
+	Square Pic - Background & Border:
+		152px x 211px
+	Avatar:
+		size: 128px x 128px
+		shape: Square
+		top: 15px ; left: 12px
+	
+	Original - Background & Border:
+		152px x 224px
+	Portrait max size:
+		width: 128px ; height: 197px
+		top: 15px ; left: 12px
+	
+	Einherjar Text (Blog Title):
+		size: 128px x 52px
+		bottom: 19px ; left: 12px
+	
+Skill Icons:
+	Size: 20px x 20px
+
+Default Colours:
+	main text: rgb(255,241,217)
