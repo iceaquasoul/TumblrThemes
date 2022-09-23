@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+
+<!--
+Fire Emblem Fates: The Path to You
+ファイヤーエムブレム if：あなたへ続く道
+
+@author iceaquasoul
+@version March 2017
+
+License: GNU GPL v3
+
+I spent a lot of time and put in a ton of effort into this so please:
+	- Please do not remove/edit the credit for the original author.
+	- Please do not distribute this without giving credit to the original author.
+	- Please do not use this for commercial reasons.
+
+Keeping in mind the above, please feel free to:
+	- Edit this however you like
+	- Use this as reference for educational purposes.
+	
+Github:
+	Main: https://github.com/iceaquasoul/
+	Repository for Tumblr Themes: https://github.com/iceaquasoul/TumblrThemes/
+
+Source Code:
+	https://raw.githubusercontent.com/iceaquasoul/TumblrThemes/master/Fates/theme.html
+-->
+
+<html>
+
+	<head>
+		<meta  charset = "utf-8" />
+
+		<!-- options -->
+		<meta  name = "color:Background"  content = "#341300" />
+		
+		<meta  name = "if:Use Avatar If Shown"  content = "0" />
+		<meta  name = "if:Center Blog on Screen"  content = "1" />
+		
+		<meta  name = "image:Portrait"  content = "" />
+		<meta  name = "image:Background"  content = "http://static.tumblr.com/ibafx9g/Jegok21cq/fates_support_kaz-kirigiri.png" />
+		
+		<meta  name = "text:Blog Title Font Size"  content = "13pt" />
+		<meta  name = "text:Post Title Font Size"  content = "13pt" />
+		<meta  name = "text:Text Font Size"  content = "11pt" />
+		
+		<meta  name = "text:Font Stack"  content = "'cambria', 'calibri', 'KaiTi', '楷体', 'STKaiti', '华文楷体', 'MS Mincho', 'ＭＳ明朝', serif" />
+		
+		<meta  name = "select:Style"  title = "Revelation"  content = "revelation" />
+		<meta  name = "select:Style"  title = "Birthright"  content = "birthright" />
+		<meta  name = "select:Style"  title = "Conquest"  content = "conquest" />
+		
+		<meta  name = "select:Colour Scheme"  title = "Dark"  content = "dark" />
+		<meta  name = "select:Colour Scheme"  title = "Light"  content = "light" />
+		
+		<meta  name = "select:Background Fit"  title = "Scale to Height"  content = "scaleheight" />
+		<meta  name = "select:Background Fit"  title = "Scale to Width"  content = "scalewidth" />
+		<meta  name = "select:Background Fit"  title = "Stretch"  content = "stretch" />
+		<meta  name = "select:Background Fit"  title = "Tile"  content = "tile" />
+		<meta  name = "select:Background Fit"  title = "Centre"  content = "centre" />
+		
+		<meta  name = "image:Navigation Icon 1"  content = "" />
+		<meta  name = "image:Navigation Icon 2"  content = "" />
+		<meta  name = "image:Navigation Icon 3"  content = "" />
+		<meta  name = "image:Navigation Icon 4"  content = "" />
+		<meta  name = "image:Navigation Icon 5"  content = "" />
+		<meta  name = "image:Navigation Icon 6"  content = "" />
+		
+		<meta  name = "text:Link 1"  content = "/" />
+		<meta  name = "text:Link 2"  content = "" />
+		<meta  name = "text:Link 3"  content = "" />
+		<meta  name = "text:Link 4"  content = "/archive" />
+		<meta  name = "text:Link 5"  content = "/ask" />
+		<meta  name = "text:Link 6"  content = "/submit" />
+		
+		<meta  name = "if:Use Custom Colours"  content = "0" />
+		
+		<meta  name = "color:Blog Title"  content = "#5d4927" />
+		<meta  name = "color:Link"  content = "#fff2af" />
+		<meta  name = "color:Link Hover"  content = "#fee879" />
+		
+		<meta  name = "if:Show Tags"  content = "1" />
+		<meta  name = "if:Use Tag Specific Images"  content = "0" />
+		
+		
+		<!-- --------------- CSS STYLESHEET --------------- -->
+		<style  type = "text/css" >
+
+			/* ---------- DEFAULTS ---------- */
+			
+			*, html		/* resets the whole page to 0 */
+			{
+				margin: 0 ;
+				padding: 0 ;
+			}
+			
+			body
+			{
+				font-family: {text:Font Stack} ;	
+				background-color: {color:Background} ;
+			}
+			
+			p
+			{
+				margin: 15px 0px ;
+				line-height: 1.1 ;
+			}
+			
+			a
+			{
+				color: inherit ;
+				text-decoration: none ;
+			}
+			
+			li, ul
+			{
+				margin: 5px 0px ;
+				padding-left: 10px ;
+			}
+			
+			blockquote
+			{
+				padding-left: 20px ;
+			}
+            
+			blockquote li, ul
+			{
+				margin-left: 20px ;
+			}
+			
+			hr
+			{
+				height: 5px ;	/* height HAS to be set otherwise the div won't be rendered */
+				margin: 15px 0px 12px ;
+				
+				background-image: url("http://static.tumblr.com/txrxffc/QVeola8kp/border_mobile.png") ;
+				background-size: 100% 100% ;
+				
+				border: none ;	/* border automatically rendered by default */
+			}
+			
+			img
+			{
+				box-sizing: border-box ;
+				
+				height: auto ;
+				max-width: 100% ;
+			}
+			
+			
+			/* ---------- GENERAL ---------- */
+			
+			#blog
+			{
+				position: fixed ;
+				box-sizing: border-box ;
+
+				top: 0px ;
+				bottom: 0px ;
+				
+				width: 900px ;
+				
+				padding: 0px 50px ;
+
+				/* - centering - */
+				{block:IfCenterBlogonScreen}
+					left: 50% ;
+					margin-left: -450px ;
+				{/block:IfCenterBlogonScreen}
+			}
+			
+			#background
+			{
+				position: fixed ;
+
+				top: 0px ;
+				left: 0px ;
+
+				width: 100% ;
+				height: 100% ;
+
+				background-image: url("{image:Background}") ;
+			}
+			
+			#credits
+			{
+				position: absolute ;
+				
+				top: 5px ;
+				left: 0px ;
+				
+				width: 50px;
+				height: 50px ;
+			}
+			
+
+			/* ---------- SIDEBAR ---------- */
+			
+			#sidebar
+			{
+				position: absolute ;
+				
+				display: flex ;				/* this is just so the navigation list at the */
+				flex-direction: column ;	/* bottom fills out the rest of this div if need be */
+
+				top: 25px ;
+				bottom: 25px ;
+
+				width: 200px ;
+			}
+			
+			
+			/* --- Sidebar - Einherjar (contains blog title) --- */
+			
+			#einherjar
+			{
+				position: relative ;
+							
+				left: 24px ;
+				
+				width: 152px ;
+				margin-bottom: 15px ;
+				
+				{block:ShowAvatar}{block:IfUseAvatarIfShown} height: 211px ; {/block:IfUseAvatarIfShown}{/block:ShowAvatar}
+				{block:ShowAvatar}{block:IfNotUseAvatarIfShown} height: 224px ; {/block:IfNotUseAvatarIfShown}{/block:ShowAvatar}
+				{block:HideAvatar} height: 224px ; {/block:HideAvatar}
+				
+				border-radius: 7px ;
+				
+				background-image: url("http://static.tumblr.com/ibafx9g/yWMok28g3/einherjar_background.png") ;
+				background-size: 100% 100% ;
+				
+				box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3) ;
+				-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3) ;
+				-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3) ;
+				-o-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3) ;
+			}
+
+			#einherjar_img
+			{
+				position: absolute ;
+
+				top: 15px ;
+				left: 12px ;
+
+				width: 128px ;
+
+				{block:ShowAvatar}{block:IfUseAvatarIfShown}
+					height: 128px ;
+					background-image: url({PortraitURL-128}) ;
+				{/block:IfUseAvatarIfShown}{/block:ShowAvatar}
+
+				{block:ShowAvatar}{block:IfNotUseAvatarIfShown}
+					height: 197px ;
+
+					background-image: url("{image:Portrait}") ;
+					background-size: auto 100% ;
+					background-position: center bottom ;
+					background-repeat: no-repeat ;
+				{/block:IfNotUseAvatarIfShown}{/block:ShowAvatar}
+				
+				{block:HideAvatar}
+					height: 197px ;
+
+					background-image: url("{image:Portrait}") ;
+					background-size: auto 100% ;
+					background-position: center bottom ;
+					background-repeat: no-repeat ;
+				{/block:HideAvatar}
+			}
+
+			#einherjar_border
+			{
+				position: absolute ;
+				box-sizing: border-box ;
+
+				width: 100% ;
+				height: 100% ;
+								
+				border: 60px solid transparent ;
+				
+				border-image: url("http://static.tumblr.com/txrxffc/P9Nol8hoz/einherjar_border.png") ;
+				-webkit-border-image: url("http://static.tumblr.com/txrxffc/P9Nol8hoz/einherjar_border.png") ;
+				-moz-border-image: url("http://static.tumblr.com/txrxffc/P9Nol8hoz/einherjar_border.png") ;
+				-o-border-image: url("http://static.tumblr.com/txrxffc/P9Nol8hoz/einherjar_border.png") ;
+				
+				border-image-slice: 60 ;
+				border-image-repeat: stretch ;
+				
+				background-repeat: no-repeat ;
+			}
+
+
+			/* --- Sidebar - Blog Title (einherjar text area) --- */
+
+			#blog_title
+			{
+				position: absolute ;
+				box-sizing: border-box ;
+				
+				bottom: 19px ;
+				left: 12px ;
+				
+				width: 128px ;
+				height: 52px ;
+				
+				border: 10px solid transparent ;
+				
+				{block:ShowTitle}
+					border-image: url("http://static.tumblr.com/txrxffc/jabol8i9c/einherjar_text_empty_border.png") ;
+					-webkit-border-image: url("http://static.tumblr.com/txrxffc/jabol8i9c/einherjar_text_empty_border.png") ;
+					-moz-border-image: url("http://static.tumblr.com/txrxffc/jabol8i9c/einherjar_text_empty_border.png") ;
+					-o-border-image: url("http://static.tumblr.com/txrxffc/jabol8i9c/einherjar_text_empty_border.png") ;
+				{/block:ShowTitle}
+				
+				{block:HideTitle}
+					border-image: url("http://static.tumblr.com/txrxffc/RBwol8ids/einherjar_text_original_border.png") ;
+					-webkit-border-image: url("http://static.tumblr.com/txrxffc/RBwol8ids/einherjar_text_original_border.png") ;
+					-moz-border-image: url("http://static.tumblr.com/txrxffc/RBwol8ids/einherjar_text_original_border.png") ;
+					-o-border-image: url("http://static.tumblr.com/txrxffc/RBwol8ids/einherjar_text_original_border.png") ;
+				{/block:HideTitle}
+				
+				border-image-slice: 10 ;
+				border-image-repeat: stretch ;
+				
+				{block:ShowTitle} background-image: url("http://static.tumblr.com/txrxffc/Rxyol8icy/einherjar_text_empty_content.png") ; {/block:ShowTitle}
+				{block:HideTitle} background-image: url("http://static.tumblr.com/txrxffc/y6pol8ieq/einherjar_text_original_content.png") ; {/block:HideTitle}
+				background-clip: content-box ;
+				background-size: 100% 100% ;
+			}
+
+			#blog_title_txt		/* turns out, having a separate, wrapped div is the best way to vertically centre this... */
+			{
+				text-align: center ;
+				
+				font-size: {text:Blog Title Font Size} ;
+				font-weight: bold ;
+				
+				{block:IfUseCustomColours} color: {color:Blog Title} ; {/block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(97,73,39) ; {block:IfNotUseCustomColours}
+				
+				text-shadow: 1px 1px 3px rgba(0,0,0,0.5) ;
+			}
+			
+			
+			/* --- Sidebar - Description --- */
+			
+			#description
+			{
+				position: relative ;
+				box-sizing: border-box ;
+				
+				margin-bottom: 15px ;
+			    
+				width: 100% ;
+				max-height: 150px ;
+				
+				font-size: 10pt ;
+				color: rgb(52,19,0) ;
+                
+				box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3) ;
+				-webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3) ;
+				-moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3) ;
+				-o-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3) ;
+				
+				overflow: auto ;
+			}
+
+			#description::-webkit-scrollbar
+			{
+				width: 7px ;
+				
+				background-color: rgba(182,132,81,0.75) ;
+				background-clip: content-box ;
+				
+				border-width: 0px 3px ;
+				border-color: transparent ;
+				border-style: solid ;
+			}
+
+			#description::-webkit-scrollbar-thumb
+			{
+				background-color: rgb(223,195,142) ;
+				
+				border: 1px solid rgb(182,132,81) ;
+				border-radius: 3px ;
+			}
+
+			#description::-webkit-scrollbar-button
+			{
+				height: 3px ;
+				
+				background-color: rgb(147,81,7) ;
+				background-clip: content-box ;
+				
+				border-width: 0px 3px ;
+				border-color: transparent ;
+				border-style: solid ;
+			}
+
+
+			/* --- Sidebar - Navigation Icons --- */
+
+			#navigation_icons
+			{
+				position: relative ;
+				
+				width: 100% ;
+				margin-bottom: 12px ;
+				
+				text-align: center ;
+			}
+
+
+			/* --- Sidebar - Navigation List --- */
+
+			#navigation_list
+			{
+				position: relative ;
+				box-sizing: border-box ;
+				
+				width: 100% ;
+				
+				border: 2px solid rgb(154,105,46) ;
+				border-radius: 3px ;
+				
+				background-color: rgb(154,105,46) ;
+				
+				box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3) ;
+				-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3) ;
+				-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3) ;
+				-o-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3) ;
+
+				overflow: auto ;
+			}
+			
+			.navigation_list_element
+			{
+				display: inline-block ;
+				box-sizing: border-box ;
+				
+				width: 100% ;
+				padding: 5px ;
+				
+				font-size: 10pt ;
+				font-weight: bold ;
+				color: rgb(122,71,54) ;
+				
+				background-color: rgb(251,247,191) ;
+				
+				box-shadow: inset 0px 0px 7px 3px rgb(244,213,146) ;
+				-webkit-box-shadow: inset 0px 0px 7px 3px rgb(244,213,146) ;
+				-moz-box-shadow: inset 0px 0px 7px 3px rgb(244,213,146) ;
+				-o-box-shadow: inset 0px 0px 7px 3px rgb(244,213,146) ;
+				
+				border-bottom: 1px solid rgb(154,105,46) ;
+				
+				transition: all 0.5s ease ;
+				-webkit-transition: all 0.5s ease ;
+				-moz-transition: all 0.5s ease ;
+				-ms-transition: all 0.5s ease ;
+				-o-transition: all 0.5s ease ;
+			}
+
+			.navigation_list_element:hover
+			{
+				color: rgb(255,232,179) ;
+
+				background-color: rgb(247,82,60) ;
+				
+				box-shadow: none ;
+				-webkit-box-shadow: none ;
+				-moz-box-shadow: none ;
+				-o-box-shadow: none ;
+			}
+			
+			#navigation_list::-webkit-scrollbar
+			{
+				width: 7px ;
+
+				background-color: rgb(219,163,126) ;
+                
+				border-width: 0px 0px 0px 2px ;
+				border-color: rgb(182,132,81) ;
+				border-style: solid ;
+			}
+			
+			#navigation_list::-webkit-scrollbar-thumb
+			{
+				border-width: 0px 0px 0px 2px ;
+				border-color: transparent ;
+				border-style: solid ;
+				border-radius: 3px 2px 2px 3px ;
+				
+				background-color: rgb(254,233,180) ;
+				background-clip: content-box ;
+			}
+			
+			
+			/* --- Sidebar - Pagination --- 
+			   --- (arrows use "navigation_icon" and "navigation_icon_shadow") --- */
+			
+			#pagination
+			{
+				position: relative ;
+
+				width: 100% ;
+				margin-bottom: 12px ;
+
+				text-align: center ;
+			}
+
+			#pagination_centre
+			{
+				display: inline-block ;
+				
+				width: 118px ;
+				height: 20px ;
+				
+				margin: 0px 4px ;
+				vertical-align: top ;	/* required to keep everything in a line since this contains another div */
+				
+				background-image: url("http://static.tumblr.com/txrxffc/ZDbomomn4/namebox_blue.png") ;
+				background-repeat: no-repeat ;
+				
+				border-radius: 4px ;
+				
+				box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-webkit-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-moz-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-o-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+			}
+
+			#pagination_centre_txt		/* separate div for vertical alignment */
+			{
+				padding-bottom: 3px ;	/* so that the text actually looks vertically-aligned... */
+				
+				font-size: 8pt ;
+				font-weight: bold ;
+				color: rgb(255,243,212) ;
+				
+				border-radius: inherit ;
+			}
+			
+			
+			/* ---------- POSTS ---------- */
+			
+			#posts_wrapper
+			{
+				position: absolute ;
+				
+				display: flex ;
+				flex-direction: column ;
+				
+				top: 25px ;
+				bottom: 25px ;
+				left: 300px ;
+			}
+			
+			#posts
+			{
+				padding-right: 46px ;	/* for scrollbar positioning */
+				overflow: auto ;
+				
+				font-size: {text:Text Font Size} ;
+			}
+			
+			
+			/* --- Page Header for Posts - Tag/Search Pages --- */
+			
+			#page_header
+			{
+				box-sizing: border-box ;
+				width: 550px ;
+				
+				margin-bottom: 25px ;
+				
+				text-align: center ;
+				
+				font-size: 12pt ;
+				font-weight: bold ;
+				color: rgb(97,73,39) ;
+				
+				box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.3) ;
+				-webkit-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.3) ;
+				-moz-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.3) ;
+				-o-box-shadow: 1px 1px 7px 1px rgba(0,0,0,0.3) ;
+			}
+			
+			.tag_design
+			{
+				position: absolute ;
+				box-sizing: border-box ;
+				
+				top: 10px ;
+				left: 494px ;
+							
+				height: 46px ;
+				width: 46px ;
+				
+				background-position: left bottom ;
+				background-repeat: no-repeat ;
+				background-size: auto 100% ;
+			}
+			
+			
+			/* --- Posts - Scrollbar --- */
+			
+			#posts::-webkit-scrollbar
+			{
+				width: 11px ;
+				
+				border-width: 0px 4px ;
+				border-color: transparent ;
+				border-style: solid ;
+				
+				background-color: rgba(164,124,69,0.75) ;
+				background-clip: content-box ;
+			}
+
+			#posts::-webkit-scrollbar-thumb
+			{
+				border: 1px solid rgb(161,118,59) ;
+				border-radius: 5px ;
+				
+				background-color: rgb(203,174,123) ;
+			}
+			
+			
+			/* --- Post - General --- */
+			
+			.post		/* a post onsists of the content, the metadata, etc. */
+			{
+				box-sizing: border-box ;
+				width: 550px ;
+				
+				margin-bottom: 25px ;
+				padding: 25px ;
+				
+				border-radius: 10px ;
+				
+				box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) ;
+				-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) ;
+				-moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) ;
+				-o-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1) ;
+			}
+			
+			.post_header
+			{
+				margin-bottom: 25px ;
+			}
+			
+			.post_title
+			{
+				font-size: {text:Post Title Font Size} ;
+				font-weight: bold ;
+			}
+			
+			
+			/* --- Post - Photo --- */
+			
+			.post_photo
+			{
+				text-align: center ;
+			}
+			
+			
+			/* --- Post - Link --- */
+			
+			.post_link
+			{
+				padding: 10px ;
+				
+				text-align: center ;
+				font-size: 10pt ;
+				
+				border-radius: 5px ;
+				
+				box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2) ;
+				-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2) ;
+				-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2) ;
+				-o-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.2) ;
+			}
+			
+			.post_link a
+			{
+				font-size: 13pt ;
+				font-weight: bold ;
+			}
+			
+			
+			/* --- Post - Audio --- */
+			
+			.post_audio_album
+			{
+				display: inline-block ;
+				
+				width: 150px ;
+				margin-right: 15px ;
+				
+				overflow: hidden ;
+			}
+			
+			.post_audio_album_art
+			{
+				height: 150px ;
+				margin-bottom: 5px ;
+				
+				background-image: url("http://static.tumblr.com/mtdphun/mrbmtls9g/albumart_gray.jpg") ;
+				background-position: top center ;
+				background-repeat: no-repeat ;
+				background-size: 100% auto ;
+			}
+			
+			.post_audio_data
+			{
+				display: inline-block ;
+				
+				width: 325px ;
+				vertical-align: top ;
+			}
+			
+			
+			/* --- Post - Answer --- */
+			
+			.post_username
+			{
+				display: inline-block ;
+				
+				min-width: 59px ;
+				padding: 3px 0px 5px ;
+				
+				font-size: 10pt ;
+				text-align: center ;
+				
+				color: rgb(255,241,217) ;
+				
+				background-image: url("http://static.tumblr.com/txrxffc/Zdjomka42/namebox25_red_centre.png") ;
+				background-size: 100% 100% ;
+				background-color: rgb(115,49,24) ;
+				
+				border-width: 0px 33px ;
+				border-radius: 4px ;
+				border-style: solid ;
+				border-color: transparent ;
+				
+				border-image-slice: 0 33 ;
+				border-image-repeat: stretch ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/ug7omka37/namebox25_red_border.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/ug7omka37/namebox25_red_border.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/ug7omka37/namebox25_red_border.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/ug7omka37/namebox25_red_border.png") ;
+			}
+			
+			.post_asker
+			{
+				transform: translate(-2px,-5px) ;
+				
+				box-shadow: 1px -1px 3px 1px rgba(0,0,0,0.4) ;
+				-webkit-box-shadow: 1px -1px 3px 1px rgba(0,0,0,0.4) ;
+				-moz-box-shadow: 1px -1px 3px 1px rgba(0,0,0,0.4) ;
+				-o-box-shadow: 1px -1px 3px 1px rgba(0,0,0,0.4) ;
+			}
+			
+			.post_answerer
+			{
+				margin-top: 5px ;
+				transform: translate(-2px,5px) ;
+				
+				box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-webkit-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-moz-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-o-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+			}
+			
+			
+			/* --- Metadata --- */
+			
+			.metadata
+			{
+				padding-top: 25px ;
+				font-size: 9.5pt ;
+			}
+			
+			.metadata_header
+			{
+				width: 100% ;
+				
+				background-image: url("http://static.tumblr.com/txrxffc/yQiola89z/metadata_header_tile.png") ;
+				background-size: auto 100% ;
+				background-repeat: repeat-x ;
+				
+				box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05) ;
+				-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05) ;
+				-moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05) ;
+				-o-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.05) ;
+			}
+			
+			.metadata_element
+			{
+				display: inline-block ;
+				padding: 0px 3px ;
+			}
+			
+			.timestamp
+			{
+				float: right ;
+				text-align: right ;
+			}
+			
+			.tags 
+			{
+				margin-top: 5px ;
+			}
+			
+			.tag
+			{
+				margin-right: 5px ;
+			}
+			
+			
+			/* --- hr separating each section of post --- */
+			
+			.post_hr
+			{
+				height: 10px ;	/* height HAS to be set otherwise the div won't be rendered... */
+				background-size: 100% auto ;
+			}
+			
+			.hr_title 
+			{ 
+				margin-bottom: 15px ;
+				background-image: url("http://static.tumblr.com/txrxffc/xFyola8qt/border_ornate_flipped.png") ; 
+			}
+			
+			.hr_metadata 
+			{
+				margin-top: 20px ;
+				background-image: url("http://static.tumblr.com/txrxffc/lFuola8oc/border_ornate.png") ; 
+			}
+			
+			
+			/* --- Notes --- */
+			
+			.notes
+			{
+				padding: 10px ;
+				border-radius: 10px ;
+				
+				font-size: 10pt ;
+				list-style-type: none ;
+			}
+			
+			.notes li.note
+			{
+				padding: 0px ;
+			}
+			
+			.notes li.note img.avatar
+			{
+				margin-right: 10px ;
+			}
+			
+			.notes li.note .answer_content
+			{
+				margin-left: 10px ;
+			}
+			
+			.notes li.note blockquote
+			{
+				margin: 5px 0px ;
+			}
+			
+			
+			/* ---------- MULTIPLE USE FORMATTING ---------- */
+			
+			.skill_icon
+			{
+				display: inline-block ;
+				
+				width: 20px ;
+				height: 20px ;
+				
+				margin: 0px 1px ;
+				
+				border-radius: 50% ;
+				
+				box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-webkit-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-moz-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-o-box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+			}
+			
+			.skill_icon:hover
+			{
+				box-shadow: inset 0px 0px 5px 2px rgba(255,255,255,0.75) 
+				            1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-webkit-box-shadow: inset 0px 0px 5px 2px rgba(255,255,255,0.75) ,
+				                    1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-moz-box-shadow: inset 0px 0px 5px 2px rgba(255,255,255,0.75) ,
+				                 1px 1px 3px 1px rgba(0,0,0,0.4) ;
+				-o-box-shadow: inset 0px 0px 5px 2px rgba(255,255,255,0.75) ,
+				               1px 1px 3px 1px rgba(0,0,0,0.4) ;
+			}
+			
+			.table_label
+			{
+				max-width: 100px ;
+				
+				padding: 5px 12px 5px 0px ;
+				
+				vertical-align: top ;
+				font-weight: bold ;
+			}
+			
+			.table_entry
+			{
+				padding: 5px 0px ;
+				vertical-align: top ;
+			}
+			
+			
+			/* ---------- DESIGN CUSTOMISATION ---------- */
+			
+			.description_revelation
+			{
+				background-color: rgb(254,232,121) ;
+				
+				border: 20px solid transparent ;
+				
+				border-image-slice: 20 ;
+				border-image-repeat: stretch ;
+                
+				border-image-source: url("http://static.tumblr.com/txrxffc/2VSomeooy/infoboxborder_revelation.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/2VSomeooy/infoboxborder_revelation.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/2VSomeooy/infoboxborder_revelation.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/2VSomeooy/infoboxborder_revelation.png") ;
+			}
+			
+			.description_birthright
+			{
+				background-color: rgb(185,252,243) ;
+			    
+				border: 20px solid transparent ;
+				
+				border-image-slice: 20 ;
+				border-image-repeat: stretch ;
+			    
+				border-image-source: url("http://static.tumblr.com/txrxffc/Ox4omeq3j/infoboxborder_birthright.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/Ox4omeq3j/infoboxborder_birthright.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/Ox4omeq3j/infoboxborder_birthright.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/Ox4omeq3j/infoboxborder_birthright.png") ;
+			}
+			
+			.description_conquest
+			{
+				background-color: rgb(216,200,249) ;
+			    
+				border: 20px solid transparent ;
+				
+				border-image-slice: 20 ;
+				border-image-repeat: stretch ;
+			    
+				border-image-source: url("http://static.tumblr.com/txrxffc/6Qhomeot7/infoboxborder_conquest.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/6Qhomeot7/infoboxborder_conquest.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/6Qhomeot7/infoboxborder_conquest.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/6Qhomeot7/infoboxborder_conquest.png") ;
+			}
+			
+			
+			.halfbox_revelation 
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/TyJomkaf4/halfbox_centre_revelation.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/mBpomkaey/halfbox_border_revelation.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/mBpomkaey/halfbox_border_revelation.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/mBpomkaey/halfbox_border_revelation.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/mBpomkaey/halfbox_border_revelation.png") ;
+				
+				box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-o-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+			}
+			
+			.halfbox_birthright 
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/gwKomkaec/halfbox_centre_birthright.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/mrtomkadz/halfbox_border_birthright.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/mrtomkadz/halfbox_border_birthright.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/mrtomkadz/halfbox_border_birthright.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/mrtomkadz/halfbox_border_birthright.png") ;
+				
+				box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-o-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+			}
+			
+			.halfbox_conquest
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/aXlomkaet/halfbox_centre_conquest.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/yxSomkaeo/halfbox_border_conquest.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/yxSomkaeo/halfbox_border_conquest.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/yxSomkaeo/halfbox_border_conquest.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/yxSomkaeo/halfbox_border_conquest.png") ;
+				
+				box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+				-o-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1) ;
+			}
+			
+			
+			.halfbox_solid_revelation 
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/IXSomkkwt/halfboxsolid_centre_revelation.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/pXKomkkwh/halfboxsolid_border_revelation.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/pXKomkkwh/halfboxsolid_border_revelation.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/pXKomkkwh/halfboxsolid_border_revelation.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/pXKomkkwh/halfboxsolid_border_revelation.png") ;
+			}
+			
+			.halfbox_solid_birthright 
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/h8domkkx6/halfboxsolid_centre_birthright.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/LCZomkkwy/halfboxsolid_border_birthright.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/LCZomkkwy/halfboxsolid_border_birthright.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/LCZomkkwy/halfboxsolid_border_birthright.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/LCZomkkwy/halfboxsolid_border_birthright.png") ;
+			}
+			
+			.halfbox_solid_conquest
+			{
+				background-image: url("http://static.tumblr.com/txrxffc/xTgomkkxr/halfboxsolid_centre_conquest.png") ;
+				background-repeat: repeat-y ;
+				background-size: 100% auto ;
+				background-clip: content-box ;
+				
+				border: 15px solid transparent ;
+				border-image-slice: 15 ;
+				border-image-repeat: repeat ;
+				
+				border-image-source: url("http://static.tumblr.com/txrxffc/QThomkkxm/halfboxsolid_border_conquest.png") ;
+				-webkit-border-image-source: url("http://static.tumblr.com/txrxffc/QThomkkxm/halfboxsolid_border_conquest.png") ;
+				-moz-border-image-source: url("http://static.tumblr.com/txrxffc/QThomkkxm/halfboxsolid_border_conquest.png") ;
+				-o-border-image-source: url("http://static.tumblr.com/txrxffc/QThomkkxm/halfboxsolid_border_conquest.png") ;
+			}
+			
+			
+			.credits_revelation { background-image: url("http://static.tumblr.com/txrxffc/2rbomkeyx/flowers_revelation.png") ; }
+			.credits_birthright { background-image: url("http://static.tumblr.com/txrxffc/zRzomkeyn/flowers_birthright.png") ; }
+			.credits_conquest { background-image: url("http://static.tumblr.com/txrxffc/cLGomkeyt/flowers_conquest.png") ; }
+			
+			
+			.post_background_light { background-color: rgba(255,255,255,0.6) ; }
+			.post_background_dark { background-color: rgba(0,0,0,0.5) ; }
+			
+			.font_light { color: rgb(52,19,0) ; }
+			.font_dark { color: rgb(255,241,217) ; }
+			
+			
+			.post_revelation_dark a:hover
+			{ 
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(254,232,121) ; {/block:IfNotUseCustomColours}
+			}
+			
+			.post_birthright_dark a:hover 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(232,182,188) ; {/block:IfNotUseCustomColours}
+			}
+			
+			.post_conquest_dark a:hover 
+			{
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(173,161,200) ; {/block:IfNotUseCustomColours}
+			}
+			
+			.post_revelation_light a:hover
+			{ 
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(239,168,74) ; {/block:IfNotUseCustomColours}
+			}
+			
+			.post_birthright_light a:hover 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(253,113,120) ; {/block:IfNotUseCustomColours}
+			}
+			
+			.post_conquest_light a:hover 
+			{
+				{block:IfUseCustomColours} color: {color:Link Hover} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(164,151,194) ; {/block:IfNotUseCustomColours}
+			}
+			
+			
+			.txt_revelation_dark blockquote { border-left: 3px solid rgba(229,164,72,0.3) ; }
+			.txt_birthright_dark blockquote { border-left: 3px solid rgba(232,182,188,0.3) ; }
+			.txt_conquest_dark blockquote { border-left: 3px solid rgba(173,161,200,0.3) ; }
+			
+			.txt_revelation_light blockquote { border-left: 3px solid rgba(161,93,59,0.3) ; }
+			.txt_birthright_light blockquote { border-left: 3px solid rgba(170,52,71,0.3) ; }
+			.txt_conquest_light blockquote { border-left: 3px solid rgba(76,55,128,0.3) ; }
+			
+			
+			.txt_revelation_dark a, .link_revelation_dark a 
+			{
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(255,242,175) ; {block:IfNotUseCustomColours}
+			}
+			
+			.txt_birthright_dark a, .link_birthright_dark a 
+			{
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(253,218,220) ; {block:IfNotUseCustomColours}
+			}
+			
+			.txt_conquest_dark a, .link_conquest_dark a 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(214,208,227) ; {block:IfNotUseCustomColours}
+			}
+			
+			.txt_revelation_light a, .link_revelation_light a 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(190,91,28) ; {block:IfNotUseCustomColours}
+			}
+			
+			.txt_birthright_light a, .link_birthright_light a 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(206,57,73) ; {block:IfNotUseCustomColours}
+			}
+			
+			.txt_conquest_light a, .link_conquest_light a 
+			{ 
+				{block:IfUseCustomColours} color: {color:Link} ; {block:IfUseCustomColours}
+				{block:IfNotUseCustomColours} color: rgb(92,77,160) ; {block:IfNotUseCustomColours}
+			}
+			
+			
+			.link_revelation_dark
+			{
+				background-color: rgba(229,164,72,0.2) ;
+				border: 1px solid rgba(229,164,72,0.3) ;
+			}
+			
+			.link_birthright_dark
+			{
+				background-color: rgba(232,182,188,0.2) ;
+				border: 1px solid rgba(232,182,188,0.3) ; 
+			}
+			
+			.link_conquest_dark
+			{ 
+				background-color: rgba(173,161,200,0.2) ; 
+				border: 1px solid rgba(173,161,200,0.3) ;
+			}
+			
+			.link_revelation_light
+			{
+				background-color: rgba(161,93,59,0.175) ;
+				border: 1px solid rgba(161,93,59,0.3) ;
+			}
+			
+			.link_birthright_light
+			{
+				background-color: rgba(170,52,71,0.175) ;
+				border: 1px solid rgba(170,52,71,0.3) ; 
+			}
+			
+			.link_conquest_light
+			{ 
+				background-color: rgba(76,55,128,0.175) ; 
+				border: 1px solid rgba(76,55,128,0.3) ;
+			}
+			
+			
+			.notes_light { background-color: rgba(255,255,255,0.6) ; }
+			.notes_dark { background-color: rgba(0,0,0,0.25) ; } 
+			
+			.notes_light li.note blockquote a { color: rgb(52,19,0) ; }
+			.notes_dark li.note blockquote a { color: rgb(255,241,217) ; }
+			
+			
+			/* ---------- ICON IMAGES ---------- */
+			
+			.nav_icon1 { background-image: url({image:Navigation Icon 1}) ; }
+			.nav_icon2 { background-image: url({image:Navigation Icon 2}) ; }
+			.nav_icon3 { background-image: url({image:Navigation Icon 3}) ; }
+			.nav_icon4 { background-image: url({image:Navigation Icon 4}) ; }
+			.nav_icon5 { background-image: url({image:Navigation Icon 5}) ; }
+			.nav_icon6 { background-image: url({image:Navigation Icon 6}) ; }
+			
+			.skill_pass { background-image: url("http://static.tumblr.com/txrxffc/85Lomk77l/skill_pass.png") ; }
+			.skill_obstruct { background-image: url("http://static.tumblr.com/txrxffc/0sJomk79c/skill_obstruct.png") }
+			
+			
+			/* ---------- UTILITY ---------- */
+			
+			.vertical_centre	/* vertically centre a div in another */
+			{
+				position: relative ;
+				
+				top: 50% ;
+				transform: translateY(-50%) ;
+			}
+			
+			
+			.img_scaleheight
+			{
+				background-position: center center ;
+				background-repeat: no-repeat ;
+				background-size: auto 100% ;
+			}
+			
+			.img_scalewidth
+			{
+				background-position: center center ;
+				background-repeat: no-repeat ;
+				background-size: 100% auto ;
+			}
+			
+			.img_stretch
+			{
+				background-position: center center ;
+				background-repeat: no-repeat ;
+				background-size: 100% 100% ;
+			}
+			
+			.img_tile
+			{
+				background-position: left top ;
+				background-repeat: repeat ;
+				background-size: auto ;
+			}
+			
+			.img_centre
+			{
+				background-position: center center ;
+				background-repeat: no-repeat ;
+				background-size: auto auto ;
+			}
+			
+			
+			/* -- enable user-defined css stylesheet -- */
+			{CustomCSS}
+			
+		</style>
+	</head>
+	
+	
+	<!-- --------------- BODY - POSITIONING --------------- -->
+	<body>
+		<!-- Background Image -->
+		<div  id = "background"  class = "img_{select:Background Fit}"></div>
+		
+		
+		<!-- The Blog -->
+		<div  id = "blog">
+			
+			<!-- ---------- CREDITS ---------- -->
+			<a  href = "https://github.com/iceaquasoul/TumblrThemes/tree/master/FEFates"  title = "developer"  target = "{Target}">
+				<div  id = "credits"  class = "credits_{select:Style} img_stretch"></div>
+			</a>
+			
+			
+			<!-- ---------- SIDEBAR ---------- -->
+			<div  id = "sidebar">
+
+				<!-- In order for the last element to fill the rest of the parent div, 
+				all previous elements must be wrapped up in its own div. 
+				Does not have to be wrapped in the div if there are no pages! -->
+				{block:HasPages}
+				<div>
+				{/block:HasPages}
+					
+					<!-- Einherjar -->
+					<a href = "/">
+						<div  id = "einherjar">
+							<div  id = "einherjar_img"></div>
+							<div  id = "einherjar_border"></div>
+						
+							<div  id = "blog_title">
+								{block:ShowTitle}
+									<div  id = "blog_title_txt"  class = "vertical_centre">{Title}</div>
+								{/block:ShowTitle}
+							</div>
+						</div>
+					</a>
+					
+					
+					<!-- Navigation Icons -->
+					<div  id = "navigation_icons">
+						<a  href = "{text:Link 1}"><div  class = "skill_icon img_stretch nav_icon1"></div></a>
+						<a  href = "{text:Link 2}"><div  class = "skill_icon img_stretch nav_icon2"></div></a>
+						<a  href = "{text:Link 3}"><div  class = "skill_icon img_stretch nav_icon3"></div></a>
+						<a  href = "{text:Link 4}"><div  class = "skill_icon img_stretch nav_icon4"></div></a>
+						<a  href = "{text:Link 5}"><div  class = "skill_icon img_stretch nav_icon5"></div></a>
+						<a  href = "{text:Link 6}"><div  class = "skill_icon img_stretch nav_icon6"></div></a>
+					</div>
+					
+					
+					<!-- Description -->
+					{block:ShowDescription}
+						{block:Description}
+						<div  id = "description"  class = "description_{select:Style}">
+							{Description}
+						</div>
+						{/block:Description}
+					{/block:ShowDescription}
+					
+					
+					<!-- Pagination -->
+					{block:Pagination}
+					<div  id = "pagination">
+						
+						<!-- left arrow: previous -->
+						{block:PreviousPage}
+						<a  href = "{PreviousPage}">
+							<div  class = "skill_icon skill_pass"></div>
+						</a>
+						{/block:PreviousPage}
+						
+						<!-- the centre part -->
+						<div  id = "pagination_centre">
+							<div  id = "pagination_centre_txt"  class = "vertical_centre">
+								Page {CurrentPage} of {TotalPages}
+							</div>
+						</div>
+						
+						<!-- right arrow: next -->
+						{block:NextPage}
+						<a  href = "{NextPage}">
+							<div  class = "skill_icon skill_obstruct"></div>
+						</a>
+						{/block:NextPage}
+						
+					</div>
+					{/block:Pagination}
+					
+					
+					<!-- Permalink Navigation -->
+					{block:PermalinkPagination}
+					<div  id = "pagination">
+						
+						<!-- left arrow: previous -->
+						{block:PreviousPost}
+						<a  href = "{PreviousPost}">
+							<div  class = "skill_icon skill_pass"></div>
+						</a>
+						{/block:PreviousPost}
+						
+						<!-- right arrow: next -->
+						{block:NextPost}
+						<a  href = "{NextPost}">
+							<div  class = "skill_icon skill_obstruct"></div>
+						</a>
+						{/block:NextPost}
+						
+					</div>
+					{/block:PermalinkPagination}
+					
+				{block:HasPages}
+				</div>
+				{/block:HasPages}
+				
+				<!-- Navigation List -->
+				{block:HasPages}
+				<div  id = "navigation_list">
+				
+					{block:Pages}
+					<a  href = "{URL}">
+						<div  class = "navigation_list_element">{Label}</div>
+					</a>
+					{/block:Pages}
+				
+				</div>
+				{/block:HasPages}
+
+			</div>
+			
+			
+			<!-- ---------- POSTS ---------- -->
+			<div  id = "posts_wrapper">
+			
+				<!-- PAGE HEADER -->
+				{block:TagPage}
+					
+					<a  href = "{TagURL}">
+						<div  id = "page_header" class = "halfbox_solid_{select:Style}">
+							Posts tagged:<br />
+							"{Tag}"
+						</div>
+					</a>
+					
+					<!-- tag-specific design -->
+					{block:IfUseTagSpecificImages}
+						<a  href = "{TagURL}"><div  class = "tag_design tag_{Tag}"></div></a>
+					{/block:IfUseTagSpecificImages}
+					
+				{/block:TagPage}
+				
+				
+				<!-- THE POSTS -->
+				<div  id = "posts"  class = "font_{select:Colour Scheme} post_{select:Style}_{select:Colour Scheme}">
+				
+					{block:Posts}
+					<div  class = "post post_background_{select:Colour Scheme}">
+						
+						<!-- SUBMISSION -->
+						{block:Submission}
+							<div  class = "post_header txt_{select:Style}_{select:Colour Scheme}">
+								<a  href = "SubmitterURL"  target = "{Target}">{Submitter}</a> submitted:
+							</div>
+						{/block:Submission}
+						
+						
+						<!-- TEXT POSTS -->
+						{block:Text}
+							
+							<!-- title -->
+							{block:Title}
+							<div  class = "post_header post_title">
+								<a  href = "{Permalink}">{Title}</a>
+							</div>
+							{/block:Title}
+							
+							<!-- body: the content -->
+							{block:Body}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Body}</div>
+							{/block:Body}
+							
+						{/block:Text}
+						
+						
+						<!-- PHOTO POSTS -->
+						{block:Photo}
+							
+							<!-- the photo -->
+							<div  class = "post_header post_photo">
+								<a  href = "{PhotoURL-HighRes}"  target = "{Target}">
+									<img  src = "{PhotoURL-500}"  alt "{PhotoAlt}" />
+								</a>
+							</div>
+							
+							<!-- caption, if any -->
+							{block:Caption}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Caption}</div>
+							{/block:Caption}
+							
+						{/block:Photo}
+						
+						
+						<!-- PANORAMA POSTS (post type = photo) -->
+						{block:Panorama}
+						
+							<!-- the panorama -->
+							<div  class = "post_header post_photo">
+								{LinkOpenTag}<img src = "{PhotoURL-Panorama}"  alt = "{PhotoAlt}" />{LinkCloseTag}
+							</div>
+							
+							<!-- caption, if any -->
+							{block:Caption}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Caption}</div>
+							{/block:Caption}
+						
+						{/block:Panorama}
+						
+						
+						<!-- PHOTOSET POSTS (post type = photo) -->
+						{block:Photoset}
+						
+							<!-- the photoset -->
+							<div  class = "post_header post_photo">
+								{Photoset-500}
+							</div>
+							
+							<!-- caption, if any -->
+							{block:Caption}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Caption}</div>
+							{/block:Caption}
+						
+						{/block:Photoset}
+						
+						
+						<!-- QUOTE POSTS -->
+						{block:Quote}
+							
+							<div  class = "post_header">
+								<!-- the quote -->
+								<div  class = "halfbox_{select:Style} post_title">{Quote}</div>
+								
+								<!-- source, if any -->
+								{block:Source}
+								<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Source}</div>
+								{/block:Source}
+							</div>
+						
+						{/block:Quote}
+						
+						
+						<!-- LINK POSTS -->
+						{block:Link}
+						
+							<!-- the link -->
+							<div  id = "tagpage"  class = "post_header post_link link_{select:Style}_{select:Colour Scheme}">
+								<a  href = "{URL}"  target = "{Target}">{Name}</a><br />
+								{Host}
+							</div>
+							
+							<!-- description -->
+							{block:Description}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Description}</div>
+							{/block:Description}
+						
+						{/block:Link}
+						
+						
+						<!-- CHAT POSTS -->
+						{block:Chat}
+							
+							<!-- title -->
+							{block:Title}
+							<div  class = "post_header post_title">
+								<a  href = "{Permalink}">{Title}</a>
+							</div>
+							{/block:Title}
+							
+							<!-- the chat -->
+							<div  class = "post_hr hr_title"></div>
+							
+							<table class = "txt_{select:Style}_{select:Colour Scheme}">
+								{block:Lines}
+								<tr>
+									{block:Label}<td  class = "table_label">{Label}</td>{/block:Label}
+									<td  class = "table_entry">{Line}</td>
+								</tr>
+								{/block:Lines}
+							</table>
+						
+						{/block:Chat}
+						
+						
+						<!-- AUDIO POSTS -->
+						{block:Audio}
+							
+							<!-- the audio -->
+							<div  class = "post_header">
+								
+								<!-- album and player -->
+								<div  class = "post_audio_album">
+								
+									<div  class = "post_audio_album_art">
+										{block:AlbumArt}
+										<img  alt = "{Album}"  src = "{AlbumArtURL}">
+										{/block:AlbumArt}
+									</div>
+									
+									{AudioPlayerGrey}
+								</div>
+								
+								<!-- audio's metadata -->
+								<table  class = "post_audio_data">
+									{block:TrackName}
+									<tr>
+										<td  class = "table_label">Name:</td>
+										<td  class = "table_entry">{TrackName}</td>
+									</tr>
+									{/block:TrackName}
+									
+									{block:Album}
+									<tr>
+										<td  class = "table_label">Album:</td>
+										<td  class = "table_entry">{Album}</td>
+									</tr>
+									{/block:Album}
+									
+									{block:Artist}
+									<tr>
+										<td  class = "table_label">Artist:</td>
+										<td  class = "table_entry">{Artist}</td>
+									</tr>
+									{/block:Artist}
+								</table>
+							</div>
+							
+							<!-- caption, if any -->
+							{block:Caption}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Caption}</div>
+							{/block:Caption}
+						
+						{/block:Audio}
+						
+						
+						<!-- VIDEO POSTS -->
+						{block:Video}
+							
+							<!-- the video -->
+							<div  class = "post_header">{Video-500}</div>
+							
+							<!-- caption, if any -->
+							{block:Caption}
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Caption}</div>
+							{/block:Caption}
+							
+						{/block:Video}
+						
+						
+						<!-- ANSWER POSTS -->
+						{block:Answer}
+							
+							<div  class = "post_header">
+								<!-- question -->
+								<div>
+									<div  class = "halfbox_{select:Style}">{Question}</div>
+									<div  class = "post_username post_asker">{Asker}</div>
+								</div>
+								
+								<!-- answer: rendered for when there are reblogs-->
+	    						{block:Answerer}
+	    						<div>
+	    							<div  class = "post_username post_answerer">{Answerer}</div>
+	        						<div  class = "halfbox_{select:Style} txt_{select:Style}_{select:Colour Scheme}">{Answer}</div>
+	    						</div>
+	    						{/block:Answerer}
+							</div>
+							
+							<!-- replies (is the answer if there are no reblogs) -->
+							<div  class = "post_hr hr_title"></div>
+							<div  class = "txt_{select:Style}_{select:Colour Scheme}">{Replies}</div>
+						
+						{/block:Answer}
+						
+						
+						<!-- METADATA - RENDERED FOR EACH POST -->
+						<div  class = "post_hr hr_metadata"></div>
+						
+						<!-- wrapped in {block:Date} in order to properly hide on non-post pages -->
+						{block:Date}
+						<div  class = "metadata">
+							
+							{block:Date}
+							<!-- header -->
+							<div  class = "metadata_header">
+								
+								<!-- permalink, # notes , source, reblog -->
+								<div  class = "metadata_element">
+									<a  href = "{Permalink}">permalink</a>
+									{block:NoteCount}
+										&nbsp; | &nbsp;{NoteCountWithLabel}
+									{/block:NoteCount}
+									
+									{block:ContentSource}
+										&nbsp; | &nbsp;<a  href = "{SourceURL}"  target = "{Target}">source</a>
+									{/block:ContentSource}
+									
+									{block:RebloggedFrom}
+										&nbsp; | &nbsp;<a  href = "{ReblogRootURL}"  target = "{Target}">origin</a>
+										&nbsp; | &nbsp;<a  href = "{ReblogParentURL}"  target = "{Target}">via</a>
+									{/block:RebloggedFrom}
+								</div>
+								
+								<!-- timestamp -->
+								<div  class = "metadata_element timestamp">
+									{DayOfMonth} {Month} {Year} &nbsp;| &nbsp;{24Hour}:{Minutes}
+								</div>
+							</div>
+							{/block:Date}
+							
+							<!-- tags -->
+							{block:IfShowTags}{block:HasTags}
+							<div  class = "tags">
+								{block:Tags}
+								<div  class = "metadata_element tag">
+									# <a  href = "{TagURL}">{Tag}</a>
+								</div>
+								{/block:Tags}
+							</div>
+							{/block:HasTags}{/block:IfShowTags}
+							
+						</div>
+						{/block:Date}
+						
+					</div>
+					
+					
+					<!-- NOTES: only on permalink pages -->
+					{block:PostNotes}
+					<div  class = "notes notes_{select:Colour Scheme} txt_{select:Style}_{select:Colour Scheme}">
+						{PostNotes-16}
+					</div>
+					{/block:PostNotes}
+					
+					{/block:Posts}
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</body>
+
+</html>
